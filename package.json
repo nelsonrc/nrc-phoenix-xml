@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A declarative XML summarizer with formatting logic for Angular apps and automation workflows.",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.lib.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:summary": "jest --coverage",
