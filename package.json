@@ -1,18 +1,33 @@
 {
   "name": "nrc-phoenix-xml",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A declarative XML summarizer with formatting logic for Angular apps and automation workflows.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:summary": "jest --coverage",
     "docs": "typedoc",
     "deploy": "bash tools/deploy-docs.sh"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "xml",
+    "summary",
+    "typedoc",
+    "angular",
+    "automation",
+    "validation",
+    "xsd"
+  ],
+  "author": "Nelson Rodriguez Caliz.",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "jest": "^30.0.0",
