@@ -1,7 +1,7 @@
 import { IXmlSummary } from '../core/interfaces';
 import { IXmlSummaryFormatOptions } from '../core/interfaces';
 import { parseXmlSummary } from './parseXmlSummary';
-import { parseFormatOptionsShort } from './parseFormatOptions';
+import { parseFormatOptions } from './parseFormatOptions';
 
 /**
  * Parses a dual-purpose string containing both summary spec and formatting config,
@@ -31,7 +31,7 @@ export function parseSpecAndOptions(
   }
 
   const xmlSummaryStr = parseXmlSummary(summaryPart);
-  const formatingOpts = parseFormatOptionsShort(formatPart);
+  const formatingOpts = parseFormatOptions(formatPart);
 
   return { xmlSummaryStr, formatingOpts };
 }

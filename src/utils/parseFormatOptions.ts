@@ -16,7 +16,7 @@ import type { IXmlSummaryFormatOptions } from '../core/interfaces';
  * @param input - Formatted string with short two-letter keys.
  * @returns Parsed IXmlSummaryFormatOptions object.
  */
-export function parseFormatOptionsShort(input: string): IXmlSummaryFormatOptions {
+export function parseFormatOptions(input: string): IXmlSummaryFormatOptions {
   const options: IXmlSummaryFormatOptions = {};
 
   input.split(',').forEach(part => {
