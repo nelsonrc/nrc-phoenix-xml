@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A declarative XML summarizer with formatting logic for Angular apps and automation workflows.",
   "repository": {
     "type": "git",
@@ -47,5 +47,11 @@
     "ts-jest": "^29.4.0",
     "typedoc": "^0.28.5",
     "typescript": "^5.8.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   }
 }
