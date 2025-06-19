@@ -1,0 +1,22 @@
+{
+  "name": "nrc-phoenix-xml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "typedoc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0",
+    "jsdom": "^26.1.0",
+    "ts-jest": "^29.4.0",
+    "typedoc": "^0.28.5",
+    "typescript": "^5.8.3"
+  }
+}
