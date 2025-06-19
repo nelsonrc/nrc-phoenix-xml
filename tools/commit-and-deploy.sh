@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Ensure dev deps are installed after reset or clean
+# yarn install --frozen-lockfile
+
+yarn build || {
+  echo "❌ Build failed. Running restore..."
+  yarn add -D @types/jest
+}
+
 set -e
 
 COMMIT_MSG=${1:-"🔧 Update and deploy docs"}

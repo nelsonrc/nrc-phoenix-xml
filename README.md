@@ -310,10 +310,10 @@ transaction,1,portfolio_type:Portfolio type,acquisition_value:Acquisition value:
 | **Code** | **Name**             | **Description**                                  |
 |----------|----------------------|--------------------------------------------------|
 | `1`      | Sum                  | Adds all values together                         |
-| `2`      | Average              | Calculates the mean of values                    |
-| `3`      | Count                | Counts the number of occurrences                 |
-| `4`      | Min                  | Finds the smallest value                         |
-| `5`      | Max                  | Finds the largest value                          |
+| `2`      | Count                | Counts the number of occurrences                 |
+| `3`      | Min                  | Finds the smallest value                         |
+| `4`      | Max                  | Finds the largest value                          |
+| `5`      | Average              | Calculates the mean of values                    |
 | `6`      | Standard Deviation   | Measures how spread out the values are           |
 
 
