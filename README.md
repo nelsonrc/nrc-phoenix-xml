@@ -18,7 +18,11 @@ Install via **npm**:
 npm install nrc-phoenix-xml
 ```
 
-## 📘 API Reference
+## 📘 Documentation
+
+Full API reference and usage examples are available at:
+
+👉 [https://nelsonrc.github.io/nrc-phoenix-xml/](https://nelsonrc.github.io/nrc-phoenix-xml/)
 
 ---
 
@@ -251,6 +255,8 @@ console.log(result)
 
 ---
 
+
+
 ## 📝 Summary String Format
 
 The `summaryString` parameter follows a **comma-separated structure**, defining XML elements and their aggregation behavior.
@@ -298,6 +304,7 @@ transaction,1,portfolio_type:Portfolio type,acquisition_value:Acquisition value:
 ```
 
 
+
 ### 📊 Aggregation Measures
 
 | **Code** | **Name**             | **Description**                                  |
@@ -308,6 +315,7 @@ transaction,1,portfolio_type:Portfolio type,acquisition_value:Acquisition value:
 | `4`      | Min                  | Finds the smallest value                         |
 | `5`      | Max                  | Finds the largest value                          |
 | `6`      | Standard Deviation   | Measures how spread out the values are           |
+
 
 
 ### 🧩 Format Options Reference
@@ -322,6 +330,7 @@ transaction,1,portfolio_type:Portfolio type,acquisition_value:Acquisition value:
 | `sr`    | `sortResults`           | `boolean`    | Sort summary output by display name                         |
 | `pf`    | `percentageFields`      | `string[]`   | List of fields treated as percentages (pipe-separated)      |
 | `if`    | `integerFields`         | `string[]`   | List of fields treated as whole numbers (pipe-separated)    |
+
 
 
 ## 🛠 Tools & Scripts
@@ -366,6 +375,7 @@ Then you can run them directly, or include them in your package.json:
 }
 ```
 💡 Keep these scripts modular and version-controlled to support reproducible builds and deployments.
+
 
 
 ## 📦 Tests
