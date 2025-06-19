@@ -2,19 +2,18 @@
 
 set -e
 
-# 🧠 Get user/repo info
+# 👤 GitHub context
 USERNAME=$(gh api user --jq .login)
-REPO_URL=$(git config --get remote.origin.url)
-REPO_NAME=$(basename -s .git "$REPO_URL")
-
-# 📂 Save current working branch
+REPO_NAME=$(basename -s .git "$(git config --get remote.origin.url)")
 CURRENT_BRANCH=$(git branch --show-current)
 
-echo "📚 Rebuilding documentation..."
-npm run docs
+# 🧪 Step 1: Generate docs into a temp directory
+TEMP_DIR=$(mktemp -d)
+echo "📚 Generating docs to temp dir: $TEMP_DIR"
+npx typedoc --out "$TEMP_DIR"
 
-# 🌱 Ensure gh-pages branch exists
-if ! git show-ref --quiet refs/remotes/origin/gh-pages; then
+# 🌱 Step 2: Ensure gh-pages exists remotely
+if ! git ls-remote --exit-code --heads origin gh-pages &> /dev/null; then
   echo "🌿 Creating gh-pages branch..."
   git checkout --orphan gh-pages
   git reset --hard
@@ -25,26 +24,32 @@ if ! git show-ref --quiet refs/remotes/origin/gh-pages; then
   git checkout "$CURRENT_BRANCH"
 fi
 
-# 🚀 Deploy docs
-echo "📦 Deploying to gh-pages..."
-
+# 🚀 Step 3: Switch to gh-pages and deploy
+echo "📦 Deploying docs to gh-pages..."
 git checkout gh-pages
 git reset --hard
 rm -rf *
-cp -r docs/* ./
+cp -r "$TEMP_DIR"/. ./
 touch .nojekyll
-
 git add .
 git commit -m "📘 Update documentation"
-git push -f origin gh-pages
+git push origin gh-pages
 
-# 🔁 Return to original branch
+# 🔁 Step 4: Switch back to working branch
 git checkout "$CURRENT_BRANCH"
 
-# 🌐 Enable Pages via GitHub API (if not already enabled)
-echo "🌐 Ensuring GitHub Pages is enabled..."
-
+# 🌐 Step 5: Enable Pages (if not already)
+echo "🌐 Activating GitHub Pages if needed..."
 gh api repos/${USERNAME}/${REPO_NAME}/pages \
   --method POST \
   --header "Accept: application/vnd.github+json" \
-  --input - <<EOF || echo "✔️ GitHub Pages already
+  --input - <<EOF || echo "✅ GitHub Pages already active."
+{
+  "source": {
+    "branch": "gh-pages",
+    "path": "/"
+  }
+}
+EOF
+
+echo "✅ Docs deployed to: https://${USERNAME}.github.io/${REPO_NAME}/"
