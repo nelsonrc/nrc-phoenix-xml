@@ -1,7 +1,7 @@
-import { XmlSummarizer } from './XmlSummarizer';
-import { XmlFieldMeasure, XmlSummaryOrientation } from '../core/enums';
-import { IXmlSummary } from '../core/interfaces';
-import { Dictionary } from '../core/Dictionary';
+import { XmlSummarizer } from '../../src/summarizers/XmlSummarizer';
+import { XmlFieldMeasure, XmlSummaryOrientation } from '../../src/core/enums';
+import { IXmlSummary } from '../../src/core/interfaces';
+import { Dictionary } from '../../src/core/Dictionary';
 
 describe('XmlSummarizer', () => {
   const xml = `

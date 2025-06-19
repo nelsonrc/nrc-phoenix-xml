@@ -17,6 +17,6 @@ git push origin "$CURRENT_BRANCH"
 
 # 3️⃣ Build and deploy documentation
 echo "📘 Deploying updated docs..."
-./deploy-docs.sh
+./tools/deploy-docs.sh
 
 echo "🚀 All done!"

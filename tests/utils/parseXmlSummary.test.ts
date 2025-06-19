@@ -1,5 +1,5 @@
-import { parseXmlSummary } from './parseXmlSummary';
-import { XmlSummaryOrientation, XmlFieldMeasure } from '../core/enums';
+import { parseXmlSummary } from '../../src/utils/parseXmlSummary';
+import { XmlSummaryOrientation, XmlFieldMeasure } from '../../src/core/enums';
 
 describe('parseXmlSummary', () => {
   it('parses a valid summary string correctly', () => {

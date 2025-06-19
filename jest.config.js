@@ -9,7 +9,7 @@ module.exports = {
     ...tsJestTransformCfg,
   },
   preset: 'ts-jest',
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/tests'],
 };
 
 

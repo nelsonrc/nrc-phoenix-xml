@@ -1,5 +1,5 @@
-import { parseSpecAndOptions } from './parseSpecAndOptions';
-import { XmlFieldMeasure, XmlSummaryOrientation } from '../core/enums';
+import { parseSpecAndOptions } from '../../src/utils/parseSpecAndOptions';
+import { XmlFieldMeasure, XmlSummaryOrientation } from '../../src/core/enums';
 
 describe('parseSpecAndOptions', () => {
   it('parses combined string into summary and format objects', () => {
