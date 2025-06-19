@@ -1,3 +1,23 @@
+# dependencies
 node_modules/
+
+# production
 dist/
+build/
+
+# TypeDoc output (local or legacy)
 docs/
+
+# temporary docs build location (used in deploy)
+tmp/
+tmp-docs/
+.cache/
+*.log
+
+# test coverage
+coverage/
+
+# system
+.DS_Store
+.env
+*.local
